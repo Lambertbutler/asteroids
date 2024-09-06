@@ -21,11 +21,11 @@ def main():
         if color:
             screen.fill("black")
             print("black")
-            color != color
+            color = not color
         else:
             screen.fill("white")
             print("white")
-            color != color
+            color = not color
         
         
         pygame.display.flip()
