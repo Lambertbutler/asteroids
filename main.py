@@ -20,11 +20,9 @@ def main():
         
         if color:
             screen.fill("black")
-            print("black")
             color = not color
         else:
             screen.fill("white")
-            print("white")
             color = not color
         
         
