@@ -11,10 +11,21 @@ def main():
     print(f"started pygame modules: {started}")
     print(f"failed to start: {failed}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    #surface = pygame.Surface()
+    color = True
 
     while True:
-        screen.fill("black")
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
+        
+        if color:
+            screen.fill("black")
+            color != color
+        else:
+            screen.fill("white")
+            color != color
+        
+        
         pygame.display.flip()
 
 
