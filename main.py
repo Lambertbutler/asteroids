@@ -25,7 +25,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
         
-        
+
         # update all objects
         for obj in updatable:
             obj.update(dt)
@@ -34,11 +34,13 @@ def main():
         for obj in drawable:
             obj.draw(screen)
 
+        # fill screen with black
         screen.fill("black")
         
-        player.draw(screen)
+        # update screen 
         pygame.display.flip()
 
+        # wait 1/60sec limit screen update rate
         dt = clock.tick(60)/1000
         
 
