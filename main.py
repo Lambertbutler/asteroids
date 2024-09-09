@@ -11,6 +11,8 @@ def main():
     print(f"started pygame modules: {started}")
     print(f"failed to start: {failed}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
     color = True
 
     while True:
@@ -20,6 +22,8 @@ def main():
         
         screen.fill("black")
         pygame.display.flip()
+
+        dt = clock.tick(60)/1000
 
 
 
