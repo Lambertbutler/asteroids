@@ -1,6 +1,6 @@
 import pygame
 from constants import *
-
+import Player
 
 def main():
     print("Starting asteroids!")
@@ -12,6 +12,7 @@ def main():
     print(f"failed to start: {failed}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
+    player = Player(2,2)
     dt = 0
     color = True
 
@@ -21,6 +22,7 @@ def main():
                 return
         
         screen.fill("black")
+        player.draw(screen)
         pygame.display.flip()
 
         dt = clock.tick(60)/1000
