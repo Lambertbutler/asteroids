@@ -2,7 +2,7 @@ import circleshape
 import constants
 import pygame
 
-class PLayer(circleshape.CircleShape):
+class Player(circleshape.CircleShape):
     def __init__(self, x,y):
         super().__init__(x,y, constants.PLAYER_RADIUS)
 
