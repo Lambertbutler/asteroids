@@ -25,17 +25,16 @@ def main():
             if event.type == pygame.QUIT:
                 return
         
+        # fill screen with black
+        screen.fill("black")
 
         # update all objects
         for obj in updatable:
             obj.update(dt)
 
-        # draw all objects
+        # draw all objects to screen
         for obj in drawable:
             obj.draw(screen)
-
-        # fill screen with black
-        screen.fill("black")
         
         # update screen 
         pygame.display.flip()
