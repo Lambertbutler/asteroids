@@ -12,7 +12,7 @@ def main():
     print(f"failed to start: {failed}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
-    player = Player(2,2)
+    player = Player(20,20)
     dt = 0
     color = True
 
