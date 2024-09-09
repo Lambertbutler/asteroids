@@ -1,18 +1,12 @@
 import pygame
-import random
 from constants import *
 from Player import Player
 from asteroid import Asteroid
 from AsteroidField import AsteroidField
 
 def main():
-    print("Starting asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
-    started, failed = pygame.init()
 
-    print(f"started pygame modules: {started}")
-    print(f"failed to start: {failed}")
+    pygame.init()
 
     # create drawable groups
     updatable = pygame.sprite.Group()
@@ -20,7 +14,7 @@ def main():
     asteroids = pygame.sprite.Group()
     
     # Auto Add new objects groups
-    AsteroidField.containers (updatable)
+    AsteroidField.containers = (updatable)
     Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
 
