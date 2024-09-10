@@ -23,19 +23,7 @@ class Asteroid(CircleShape):
             a2.velocity = a2_velocity * 1.2
             self.kill()
             
-    def wraparound(self):
-        # if we go off the right side of the screen
-        if self.position.x > SCREEN_WIDTH + self.radius:
-            self.position.x = -self.radius
-        # if we go off the bottom of the screen
-        if self.position.y > SCREEN_HEIGHT + self.radius:
-            self.position.y = -self.radius        
-    
-        if self.position.x < -self.radius:
-            self.position.x = SCREEN_WIDTH + self.radius
-        
-        if self.position.y < -self.radius:
-            self.position.y = SCREEN_HEIGHT + self.radius
+
     
        
     def draw(self, screen):

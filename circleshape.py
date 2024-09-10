@@ -1,5 +1,5 @@
 import pygame
-
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 class CircleShape(pygame.sprite.Sprite):
     def __init__(self,x,y,radius):
@@ -20,6 +20,19 @@ class CircleShape(pygame.sprite.Sprite):
     def update(self, dt):
         pass
 
+    def wraparound(self):
+        # if we go off the right side of the screen
+        if self.position.x > SCREEN_WIDTH + self.radius:
+            self.position.x = -self.radius
+        # if we go off the bottom of the screen
+        if self.position.y > SCREEN_HEIGHT + self.radius:
+            self.position.y = -self.radius        
+    
+        if self.position.x < -self.radius:
+            self.position.x = SCREEN_WIDTH + self.radius
+        
+        if self.position.y < -self.radius:
+            self.position.y = SCREEN_HEIGHT + self.radius
     
     def collision(self,other):
         combinedRad = self.radius + other.radius
