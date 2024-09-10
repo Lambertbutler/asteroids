@@ -7,21 +7,21 @@ from constants import *
 class AsteroidField(pygame.sprite.Sprite):
     edges = [
         [   # random point left side
-            pygame.Vector2(1, 0),
+            pygame.Vector2(1, 0), # right pointing vector
             lambda y: pygame.Vector2(-ASTEROID_MAX_RADIUS, y * SCREEN_HEIGHT),
         ],
         [   # random point right side
-            pygame.Vector2(-1, 0),
+            pygame.Vector2(-1, 0), # left pointing vector
             lambda y: pygame.Vector2(
                 SCREEN_WIDTH + ASTEROID_MAX_RADIUS, y * SCREEN_HEIGHT
             ),
         ],
         [   # random point across top
-            pygame.Vector2(0, 1),
+            pygame.Vector2(0, 1), # down pointing vector
             lambda x: pygame.Vector2(x * SCREEN_WIDTH, -ASTEROID_MAX_RADIUS),
         ],
         [   # random point acrros bottom
-            pygame.Vector2(0, -1),
+            pygame.Vector2(0, -1), # up pointing vector
             lambda x: pygame.Vector2(
                 x * SCREEN_WIDTH, SCREEN_HEIGHT + ASTEROID_MAX_RADIUS
             ),
