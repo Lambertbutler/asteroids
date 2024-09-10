@@ -9,7 +9,7 @@ def main():
 
     pygame.init()
 
-    # create drawable groups
+    # create object groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
