@@ -50,9 +50,12 @@ def main():
             # check colision with shot
             for shot in shotsFired:
                 if shot.collision(asteroid):
+                    ' remove teh shot once it hits'
+                    shotsFired.remove(shot)
+                    # check if asteroid is as small as it can get
                     if asteroid.radius <= ASTEROID_MIN_RADIUS:
                         asteroids.remove(asteroid)
-                    else:
+                    else: # if not shrink asteroid
                         asteroid.radius -= ASTEROID_MIN_RADIUS
             
             
