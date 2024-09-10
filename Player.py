@@ -38,6 +38,7 @@ class Player(circleshape.CircleShape):
         self.position += forward * PLAYER_SPEED * dt
 
     def update(self, dt):
+        self.wraparound()
         keys = pygame.key.get_pressed()
         self.shot_timer -= dt
         if keys[pygame.K_a]:

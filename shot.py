@@ -10,4 +10,5 @@ class Shot(CircleShape):
        pygame.draw.circle(screen, "white", self.position, self.radius, width=2) 
 
     def update(self,dt):
+        self.wraparound()
         self.position += self.velocity * dt   
