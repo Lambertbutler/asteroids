@@ -18,7 +18,7 @@ def main():
     AsteroidField.containers = (updatable)
     Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
-    Shot.containers = (shotsFired)
+    Shot.containers = (shotsFired, updatable, drawable)
 
     # Create objects
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -40,7 +40,7 @@ def main():
         for obj in updatable:
             obj.update(dt)
             
-        # check fo rcolisions with ship
+        # check for colisions with ship
         for asteroid in asteroids:
             if asteroid.collision(player):
                 print("Game over!")
