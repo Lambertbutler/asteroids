@@ -40,11 +40,22 @@ def main():
         for obj in updatable:
             obj.update(dt)
             
-        # check for colisions with ship
+        # check for colisions
         for asteroid in asteroids:
+            # check collsion with play
             if asteroid.collision(player):
                 print("Game over!")
                 return
+            
+            # check colision with shot
+            for shot in shotsFired:
+                if shot.collision(asteroid):
+                    if asteroid.radius <= ASTEROID_MIN_RADIUS:
+                        asteroids.remove(asteroid)
+                    else:
+                        asteroid.radius -= ASTEROID_MIN_RADIUS
+            
+            
                 
         # draw all objects to screen
         for obj in drawable:
