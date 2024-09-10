@@ -22,7 +22,7 @@ def main():
     # Create objects
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
-    Player(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
+    player = Player(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
     AsteroidField()
     dt = 0
     color = True
@@ -41,7 +41,7 @@ def main():
             
         # check fo rcolisions with ship
         for asteroid in asteroids:
-            if asteroid.collision(Player):
+            if asteroid.collision(player):
                 print("Game over!")
                 break
 
