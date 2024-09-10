@@ -55,7 +55,7 @@ def main():
                     # check if asteroid is as small as it can get
                     if asteroid.radius <= ASTEROID_MIN_RADIUS:
                         # remove the asteroid from all groups
-                        asteroid.kill()
+                        asteroid.split()
                     else: # if not shrink asteroid
                         asteroid.radius -= ASTEROID_MIN_RADIUS
             
